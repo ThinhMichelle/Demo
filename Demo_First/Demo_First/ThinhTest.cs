@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Demo_First
 {
-    internal class HuyTest
+    internal class ThinhTest
     {
-        string t = "Thinh";
-        string t2 = "Michelle";
+        public int MyProperty { get; set; }
     }
 }
