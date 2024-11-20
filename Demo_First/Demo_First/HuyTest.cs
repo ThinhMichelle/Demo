@@ -8,5 +8,6 @@ namespace Demo_First
 {
     internal class HuyTest
     {
+        public int MyProperty { get; set; }
     }
 }
