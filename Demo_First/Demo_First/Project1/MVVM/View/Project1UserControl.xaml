@@ -1,0 +1,47 @@
+﻿<pj:UserControlBase x:Class="Project1.Project1UserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project1"
+             xmlns:pj="clr-namespace:Demo_First"
+             mc:Ignorable="d" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             Background="White"
+             Height="350" Width="380">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding Loaded}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Demo_First;component/Style/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <pj:IntegerGreaterThan x:Key="IntegerGreaterThan" Value="0"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel Margin="{StaticResource mAll}">
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0 0 -10 -10">
+            <Button Content="OK" Style="{StaticResource AcceptButtonStyle}" Command="{Binding OKCmd}"/>
+            <Button Content="GEN_Cancel" Command="{Binding CancelCmd}"/>
+        </StackPanel>
+        <TextBox 
+                 pj:TextBoxInteraction.NumberInput="INTEGER_BIGGER" 
+                 Validation.ErrorTemplate="{StaticResource TextBoxErrorTemplate}">
+            <Binding Path="Value" 
+                             ValidatesOnDataErrors="True" 
+                             ValidatesOnExceptions="True" 
+                             NotifyOnValidationError="True"
+                             UpdateSourceTrigger="PropertyChanged"
+                             Mode="TwoWay">
+                <Binding.ValidationRules >
+                    <StaticResource ResourceKey="IntegerGreaterThan"/>
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
+
+    </DockPanel>
+</pj:UserControlBase>

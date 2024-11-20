@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command Demo_First</Text>
+    <Description>Some description for Demo_First</Description>
+    <Assembly>Demo_First\Demo_First.dll</Assembly>
+    <FullClassName>Demo_First.Command</FullClassName>
+    <ClientId>40dec0ba-0e98-45fd-ada5-4a365d94487e</ClientId>
+    <VendorId>com.inbrick.product</VendorId>
+    <VendorDescription>Inbrick, https://inbrick.net </VendorDescription>
+  </AddIn>
+	<AddIn Type="Application">
+		<Name>Demo_First</Name>
+		<Assembly>Demo_First\Demo_First.dll</Assembly>
+		<AddInId>4e01fb75-dd51-4854-936c-fe18e12dfd1d</AddInId>
+		<FullClassName>Demo_First.App</FullClassName>
+		<VendorId>bcaa5cdd-2604-4d78-b6f9-0046f5c58def</VendorId>
+		<VendorDescription>Inbrick, https://inbrick.net</VendorDescription>
+	</AddIn>
+</RevitAddIns>
