@@ -26,7 +26,8 @@ namespace Demo_First
         {
             ResourcesAssemblyMng = new ResourcesAssembly(Assembly.GetExecutingAssembly());
             LanguageMng = new MngLanguage();
-            MngLanguage.ChangeLanguage(application.ControlledApplication.Language == LanguageType.Japanese ? "ja-JP" : "en-US");
+            MngLanguage.ChangeLanguage( "ja-JP");
+
             RegistryMng = new RegistryFile(pathRegistry);
             RibbonManage = new RibbonManage(application);
             var brushConverter = new BrushConverter();
